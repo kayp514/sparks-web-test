@@ -16,6 +16,6 @@ handlers:
 - url: /.*
   secure: always
   redirect_http_response_code: 301
-  static_files: static/index.html
-  upload: static/index.html
+  static_files: sparks-web-test/src/index.html
+  upload: sparks-web-test/src/index.html
   expiration: "1m"

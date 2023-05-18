@@ -1,17 +1,21 @@
-runtime: python311 # or another supported version
-
+runtime: python311
 instance_class: F2
 
 env_variables:
   BUCKET_NAME: "staging.sparks-web-test.appspot.com"
 
 handlers:
-# Matches requests to /images/... to files in static/images/...
-- url: /.*
-  static_files: ./src/index.html
+- url: /(.*\.(css|js|gif|png|jpg|ico|svg|woff2|ttf|eot))$
+  static_files: static/\1
+  upload: static/.*\.(css|js|gif|png|jpg|ico|svg|woff2|ttf|eot)$
+
+- url: /(.*\.(html|htm|yaml|txt))$
+  static_files: \1
+  upload: .*\.(html|htm|yaml|txt)$
 
 - url: /.*
   secure: always
-  static_dir: home/info
   redirect_http_response_code: 301
-  script: auto
+  static_files: static/index.html
+  upload: static/index.html
+  expiration: "1m"

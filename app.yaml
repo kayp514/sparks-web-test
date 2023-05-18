@@ -8,7 +8,7 @@ env_variables:
 handlers:
 # Matches requests to /images/... to files in static/images/...
 - url: /.*
-  static_files: src/index.html
+  static_files: ./src/index.html
 
 - url: /.*
   secure: always

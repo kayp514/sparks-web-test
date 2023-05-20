@@ -4,10 +4,10 @@ threadsafe: yes
 
 handlers:
   - url: /
-    static_files: dist/sparks/index.html
-    upload: dist/sparks/index.html
+    static_files: dist/sparks-web-test/index.html
+    upload: dist/sparks-web-test/index.html
   - url: /
-    static_dir: dist/sparks
+    static_dir: dist/sparks-web-test
 
 skip_files:
   - e2e/

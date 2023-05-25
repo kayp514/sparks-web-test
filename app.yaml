@@ -5,8 +5,8 @@ threadsafe: true
 
 handlers:
   - url: /
-    static_files: sparksweb/src/index.html
-    upload: sparksweb/src/index.html
+    static_files: sparks-web-test/src/index.html
+    upload: sparks-web-test/src/index.html
 
   - url: /.*
-    static_dir: sparksweb
+    static_dir: sparks-web-test
